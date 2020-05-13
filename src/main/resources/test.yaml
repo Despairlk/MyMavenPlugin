@@ -1,0 +1,30 @@
+path:
+  /v1/user:
+    - restType:
+        type: get
+        parameters:
+        - parameter:
+              paramerName: id
+              paremerType: String
+              required: true
+        - parameter:
+              paramerName: hasDelete
+              paremerType: String
+              default: true
+        response:
+          responseType: String
+          eg:
+        methodName: getUser
+        tag: user
+    - restType:
+        type: post
+        parameters:
+        - parameter:
+              paramerName: submitInfo
+              paremerType: body
+              required: true
+        response:
+          responseType: String
+          eg:
+        methodName: addUser
+        tag: user
