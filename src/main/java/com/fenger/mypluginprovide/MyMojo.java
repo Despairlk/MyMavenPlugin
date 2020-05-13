@@ -33,8 +33,4 @@ public class MyMojo extends AbstractMojo {
         String out = FileUtils.readFileContent(path);
         System.out.println(out);
     }
-    public static void main(String[] args){
-        String path = "test.yaml";
-
-    }
 }
