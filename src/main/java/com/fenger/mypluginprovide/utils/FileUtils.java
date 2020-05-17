@@ -8,6 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FileUtils {
+    public static void main(String[] args){
+        String path = "D:\\workspace\\MavenPluginCusumeDemo\\src\\main\\java\\com\\fenger";
+        File file = new File(path);
+        if(!file.exists()) {
+            boolean mkdirs = file.mkdirs();
+        }
+    }
     public static String readFileContent(String fileName) {
         File file = new File(fileName);
         BufferedReader reader;
@@ -35,11 +42,15 @@ public class FileUtils {
         return sbf.toString();
     }
 
-    public static Map<String,Object> readYamlContent(String fileName,Class<?> clazz ) {
+    public static Map<String,Object> readYamlContent(String fileName) {
         Yaml yaml = new Yaml();
-        ClassLoader classLoader = clazz.getClassLoader();
-        InputStream resourceAsStream = classLoader.getResourceAsStream(fileName);
-        Map<String, Object> ret = (Map<String, Object>) yaml.load(resourceAsStream);
+        File file = new File(fileName);
+        Map<String, Object> ret = null;
+        try {
+            ret = (Map<String, Object>) yaml.load(new FileInputStream(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         System.out.println(ret);
         return ret;
     }

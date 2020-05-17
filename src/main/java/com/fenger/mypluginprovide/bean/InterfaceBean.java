@@ -16,4 +16,10 @@ public class InterfaceBean {
     private RequestMethod requestType;
     /*参数列表*/
     private List<ParamerBean> paramerBeans;
+    /*返回值类型*/
+    private Class responseClass;
+    /*所属controller*/
+    private String tag;
+    /*生成方法名*/
+    private String methodName;
 }
