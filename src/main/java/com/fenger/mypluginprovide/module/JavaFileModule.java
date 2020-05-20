@@ -16,8 +16,8 @@ import java.util.regex.Matcher;
 
 public class JavaFileModule {
 
-    public static void main(String[] args){
-        new JavaFileModule().initYamlToControllerFile("D:\\workspace\\MavenPluginCusumeDemo\\src\\main\\resources\\test.yaml","com.fenger");
+    public static void main (String[] args){
+        new JavaFileModule().initYamlToControllerFile("D:\\workspace\\addresswebapp\\src\\main\\resources\\test.yaml","com.fenger.addresswebapp");
     }
 
     public void initYamlToControllerFile(String path,String packageName) {
@@ -119,23 +119,23 @@ public class JavaFileModule {
 
         switch (requestType){
             case GET:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.GET)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.GET)";
             case HEAD:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.HEAD)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.HEAD)";
             case POST:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.POST)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.POST)";
             case PUT:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.PUT)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.PUT)";
             case PATCH:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.PATCH)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.PATCH)";
             case DELETE:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.DELETE)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.DELETE)";
             case OPTIONS:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.OPTIONS)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.OPTIONS)";
             case TRACE:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.TRACE)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.TRACE)";
             default:
-                return "@RequestMapping(name = \"%s\", method = RequestMethod.GET)";
+                return "@RequestMapping(value = \"%s\", method = RequestMethod.GET)";
         }
     }
 
